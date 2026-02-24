@@ -1,0 +1,11 @@
+<Solution>
+  <Project Path="Application/Application.csproj" Id="dd540178-a65a-4aa0-acc3-80ef2fe0ae1d" />
+  <Project Path="Domain/Domain.csproj" Id="9082778a-4286-4ba9-b5cf-a10a2b00c441" />
+  <Project Path="Infrastructure/Infrastructure.csproj" Id="dd706c84-abf4-4daa-a3f1-afe2ca43c81b" />
+  <Project Path="Presentation.Api/Presentation.Api.csproj" />
+  <Project Path="Presentation.WebApp/presentation.webapp.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="Tests/Tests.csproj" Id="799ce8e9-074c-4c42-a16f-c1f69811b38d" />
+</Solution>
