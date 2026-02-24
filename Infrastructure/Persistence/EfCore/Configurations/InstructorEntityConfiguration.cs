@@ -40,17 +40,13 @@ internal sealed class InstructorEntityConfiguration : IEntityTypeConfiguration<I
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.Property(x => x.Concurrency)
-            .IsRowVersion()
-            .IsRequired();
+            .IsRowVersion();
 
         builder.Property(x => x.CreatedAt)
-            .HasPrecision(3)
-            .ValueGeneratedOnAdd()
             .IsRequired();
 
         builder.Property(x => x.ModifiedAt)
-            .HasPrecision(3)
-            .ValueGeneratedOnAddOrUpdate()
             .IsRequired();
+
     }
 }

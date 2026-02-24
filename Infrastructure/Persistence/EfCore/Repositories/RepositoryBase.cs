@@ -14,14 +14,21 @@ public abstract class RepositoryBase<TModel, TId, TEntity, TContext>(TContext co
 
     public virtual async Task<bool> CreateAsync(TModel model, CancellationToken ct = default)
     {
-        if (model is null)
-            throw new InvalidOperationException("Domain model is required.");
+        try
+        {
+            if (model is null)
+                throw new InvalidOperationException("Domain model is required.");
 
-        var entity = ToEntity(model);
-        await Set.AddAsync(entity, ct);
-        var saved = await Context.SaveChangesAsync(ct);
-        
-        return saved > 0;
+            var entity = ToEntity(model);
+            await Set.AddAsync(entity, ct);
+            var saved = await Context.SaveChangesAsync(ct);
+
+            return saved > 0;
+        }
+        catch
+        {
+            return false;
+        }
     }
 
     public virtual async Task<bool> UpdateAsync(TId id, TModel model, CancellationToken ct = default)

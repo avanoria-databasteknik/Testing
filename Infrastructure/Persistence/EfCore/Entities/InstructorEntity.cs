@@ -13,7 +13,7 @@ public sealed class InstructorEntity
     public DateTime CreatedAt { get; set; }
     public DateTime ModifiedAt { get; set; }
 
-    public byte[] Concurrency { get; set; } = null!;
+    public byte[]? Concurrency { get; set; }
 
     public InstructorRoleEntity Role { get; set; } = null!;
 
