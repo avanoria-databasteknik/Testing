@@ -18,11 +18,3 @@ public sealed class InstructorEntity
     public InstructorRoleEntity Role { get; set; } = null!;
 
 }
-
-public sealed class InstructorRoleEntity
-{
-    public int Id { get; set; }
-    public string RoleName { get; set; } = null!;
-
-    public ICollection<InstructorEntity> Instructors { get; set; } = [];
-}
